@@ -14,7 +14,7 @@ function wordToBin(str){
     return arr.map(char => {
       return '0' + char.charCodeAt(0).toString(2)
     })
-    
+  }
     
   //   Matematica binari in 8 bites
   //  return   arr.map(char => {
@@ -31,5 +31,69 @@ function wordToBin(str){
   //     return bite.join('')
   //   })
   
-  }
   
+/* 
+Kata - 22.04.2021
+
+Sort Numbers
+
+Finish the solution so that it sorts the passed in array of numbers. If the function passes in an empty array or null/nil value then it should return an empty array.
+
+For example:
+
+solution([1, 2, 10, 50, 5]); // should return [1,2,5,10,50]
+solution(null); // should return []
+*/  
+
+function solution(nums){
+  if(!nums){
+    return []
+  } else {
+    return nums.sort((a, b) => a-b)
+  }
+  }
+
+  /* 
+  
+  Snail Sort
+Given an n x n array, return the array elements arranged from outermost elements to the middle element, traveling clockwise.
+
+array = [[1,2,3],
+         [4,5,6],
+         [7,8,9]]
+snail(array) #=> [1,2,3,6,9,8,7,4,5]
+For better understanding, please follow the numbers of the next array consecutively:
+
+array = [[1,2,3],
+         [8,9,4],
+         [7,6,5]]
+snail(array) #=> [1,2,3,4,5,6,7,8,9]
+  */
+
+//varianta 1
+const snail = (array) =>{
+  let finalArray = []
+  while(array.length){
+    finalArray.push(...array.shift())
+    for (var i = 0; i < array.length; i++){
+      finalArray.push(array[i].pop())
+    }
+    finalArray.push(...(array.pop() || []).reverse())
+    for (var i = array.length -1; i >= 0; i--){
+      finalArray.push(array[i].shift())
+    }
+  }
+  return finalArray
+}
+
+//varianta 2
+
+const snail = (arr) => {
+  var finalArray = [];
+  while (arr.length) {
+    finalArray.push(...arr.shift());
+    arr.map(row => finalArray.push(row.pop()))
+    arr.reverse().map(row => row.reverse());
+  }
+  return finalArray
+}
