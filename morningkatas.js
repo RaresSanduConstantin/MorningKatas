@@ -70,8 +70,14 @@ array = [[1,2,3],
 snail(array) #=> [1,2,3,4,5,6,7,8,9]
   */
 
+const array = [[1, 2, 3], [4, 5, 6], [7, 8, 9]]
+
+//varianta 1
+const array = [[1, 2, 3], [4, 5, 6], [7, 8, 9]]
+
 //varianta 1
 const snail = (array) =>{
+debugger
   let finalArray = []
   while(array.length){
     finalArray.push(...array.shift())
@@ -85,7 +91,7 @@ const snail = (array) =>{
   }
   return finalArray
 }
-
+// snail(array)
 //varianta 2
 
 const snail = (arr) => {
