@@ -161,3 +161,38 @@ function getMostProfitFromStockQuotes(quotes) {
   
   return profit
 }
+
+/* Kata 27.04.2021 */
+
+function getMostProfitFromStockQuotes(quotes) {
+  let maxProfit = 0;
+  let maxStockPrice = Math.max(...quotes);
+  let maxStockIndex = quotes.indexOf(maxStockPrice);
+
+  function calculateMaxProfit(arr, _maxStockPrice, _maxStockIndex) {
+    for ( let i = 0; i < _maxStockIndex; i++) {
+      maxProfit = maxProfit + (_maxStockPrice - arr[i]);
+    }
+    let newArr = arr.slice(_maxStockIndex + 1);
+    _maxStockPrice = Math.max(...newArr);
+    _maxStockIndex = newArr.indexOf(_maxStockPrice);
+    if (newArr.length > 1) {
+      calculateMaxProfit(newArr, _maxStockPrice, _maxStockIndex);
+    }
+  }
+
+  calculateMaxProfit(quotes, maxStockPrice, maxStockIndex)
+  return maxProfit;
+}
+
+function getVowels(srt){
+  let vowelsCount = 0
+  let vowels = ['a', 'e', 'i', 'o', 'u']
+  str.split('').forEach(letter =>{
+    if(vowels.includes(letter)){
+      vowelsCount++
+    }
+  })
+
+  return vowelsCount
+}
