@@ -185,6 +185,8 @@ function getMostProfitFromStockQuotes(quotes) {
   return maxProfit;
 }
 
+//asd
+
 function getVowels(srt){
   let vowelsCount = 0
   let vowels = ['a', 'e', 'i', 'o', 'u']
