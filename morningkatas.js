@@ -444,3 +444,11 @@ function calculate(str) {
   
 return sum.toString();
 }
+
+
+function calculate(str) {
+  const replacePlus = str.replace(/plus/g, '+');
+  const replaceMinus = replacePlus.replace(/minus/g, '-');
+ 
+  return eval(replaceMinus).toString();
+}
