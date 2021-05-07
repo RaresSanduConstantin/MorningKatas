@@ -579,3 +579,64 @@ function highAndLow(numbers){
   const n = numbers.split(' ').map((e)=> +e)
   return Math.max(...n) + ' ' + Math.min(...n)
 }
+
+/* kata 07.05.2021
+Your task is to return the sum of Triangular Numbers up-to-and-including the nth Triangular Number.
+
+Triangular Number: "any of the series of numbers (1, 3, 6, 10, 15, etc.) obtained by continued summation of the natural numbers 1, 2, 3, 4, 5, etc."
+
+[01]
+02 [03]
+04 05 [06]
+07 08 09 [10]
+11 12 13 14 [15]
+16 17 18 19 20 [21]
+e.g. If 4 is given: 1 + 3 + 6 + 10 = 20.
+
+Triangular Numbers cannot be negative so return 0 if a negative number is given.
+*/
+function sumTriangularNumbers(n) {
+  if(n<0) return 0;
+  let triangularNums = []
+  for(let i = 0; i <= n; i++){
+      let a = (i*(i+1))/2
+      triangularNums.push(a)
+  }
+  
+  return triangularNums.reduce((acc,curr) => acc+curr, 0)
+}
+
+/* 
+Implement a function that adds two numbers together and returns their sum in binary. The conversion can be done before, or after the addition.
+
+The binary number returned should be a string.
+
+Examples:
+
+add_binary(1, 1) == "10" (1 + 1 = 2 in decimal or 10 in binary)
+add_binary(5, 9) == "1110" (5 + 9 = 14 in decimal or 1110 in binary)
+*/
+
+function addBinary(a,b) {
+  let sum = a + b;
+   
+   return sum.toString(2)
+ }
+
+ /* Find the greatest common divisor of two positive integers. The integers can be large, so you need to find a clever solution.
+
+The inputs x and y are always greater or equal to 1, so the greatest common divisor will always be an integer that is also greater or equal to 1. */
+
+function mygcd(x,y){
+  //your code here
+  if(!y) return x;
+  return mygcd(y, x%y) 
+}
+
+/* Just a simple sorting usage. Create a function that returns the elements of the input-array / list in a sorted manner. */
+
+// input: names - unsorted array
+// output: sorted array
+sortme = function( names ){
+  return names.sort()
+}
