@@ -734,3 +734,59 @@ matrix =
 [6,4,2,5,5,3]  x
 ]
  */
+let newArr =
+        matrix.filter((rowElement, rowIndex) => {
+          return rowsToDelete.indexOf(rowIndex) < 0;
+        }).map((e, i) => {
+          e = e.filter((colElement, colIndex) => {
+            return columnsToDelete.indexOf(colIndex) < 0;
+          });
+          return e;
+        });
+/* 
+kata 11.05.2021
+Given 2 strings, a and b, return a string of the form: shorter+reverse(longer)+shorter.
+
+In other words, the shortest string has to be put as prefix and as suffix of the reverse of the longest.
+
+Strings a and b may be empty, but not null (In C# strings may also be null. Treat them as if they are empty.).
+If a and b have the same length treat a as the longer producing b+reverse(a)+b
+*/
+
+function shorter_reverse_longer(a,b){
+  let longer = b;
+  let shorter = a
+
+  if (a.length === b.length || a.length > b.length) {
+    longer = a;
+    shorter = b;
+  }
+
+  return shorter + longer.split('').reverse().join('') + shorter;
+}
+
+/* 
+A format for expressing an ordered list of integers is to use a comma separated list of either
+
+individual integers
+or a range of integers denoted by the starting integer separated from the end integer in the range by a dash, '-'. The range includes all integers in the interval including both endpoints. It is not considered a range unless it spans at least 3 numbers. For example "12,13,15-17"
+Complete the solution so that it takes a list of integers in increasing order and returns a correctly formatted string in the range format.
+
+Example:
+
+solution([-6, -3, -2, -1, 0, 1, 3, 4, 5, 7, 8, 9, 10, 11, 14, 15, 17, 18, 19, 20]);
+// returns "-6,-3-1,3-5,7-11,14,15,17-20"
+*/
+
+function solution(list){
+  let nums = []
+for (let i = 0; i < list.length; i++) {
+    let previous = list[i - 1];
+    let current = list[i];
+    let next = list[i + 1];
+
+  console.log('prev', previous, 'curr', current, 'next', next)
+  
+}
+//   console.log(nums)
+}
