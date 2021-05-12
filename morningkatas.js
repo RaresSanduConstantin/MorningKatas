@@ -790,3 +790,50 @@ for (let i = 0; i < list.length; i++) {
 }
 //   console.log(nums)
 }
+
+/* 
+kata 12.05.2021
+Coding Meetup #14 - Higher-Order Functions Series - Order the food
+*/
+
+function orderFood(list) {
+  // thank you for checking out the Coding Meetup kata :)
+  let resp = {
+    vegetarian: 0,
+    standard: 0,
+    vegan: 0
+  };
+ 
+  list.forEach(dev => {
+    if (!resp[dev.meal]) {
+      resp[dev.meal] = 0;
+    }
+      resp[dev.meal]++;
+  });
+ 
+//   { vegetarian: 2, standard: 1, vegan: 1 }
+return resp;
+}
+
+/* Coding Meetup #13 - Higher-Order Functions Series - Is the meetup language-diverse? */
+function isLanguageDiverse(list) {  // thank you for checking out the Coding Meetup kata :)
+  // thank you for checking out the Coding Meetup kata :)
+ let resp = {
+   Python: 1,
+   Ruby: 2,
+   JavaScript: 4 //x2
+ };
+
+ list.forEach(dev => {
+   if (!resp[dev.language]) {
+     resp[dev.language] = 0;
+   }
+     resp[dev.language]++;
+ });
+
+for (const [key, value] of Object.entries(resp)) {   
+  
+}
+console.log(resp);
+// return resp;
+}
