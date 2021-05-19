@@ -1044,3 +1044,34 @@ function convert(s) {
   
 
 }
+
+/* kata 19.05.2021
+
+*/
+
+function convert(s) {
+ 
+  if(s.length === 0) return 0;
+  let letters = {}
+  let start = 2;
+  
+  let result = []
+  let arr = s.toLowerCase().split('')
+  arr.forEach((e, i) => {
+    console.log(letters)
+    if(i===0) {
+      letters[e] = 1
+    } else if(i===1) {
+      letters[e] = 0
+    } else {
+      letters[e] = start++;      
+    }})
+  
+  arr.forEach((x) => {
+    result.push(letters[x].toString())
+  })
+
+ 
+
+    return parseInt(result.join(''), 10)
+}
