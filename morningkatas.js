@@ -1140,3 +1140,72 @@ function makeValley(arr) {
 
 const makeValley = arr =>
   [...arr.sort((a, b) => b - a).filter((_, idx) => !(idx % 2)), ...arr.filter((_, idx) => idx % 2).reverse()];
+
+  /* 
+  kata 25.05.2021
+Turn String Input into Hash
+
+  */
+
+  function strToHash(str){
+    // ...
+    let resp = {};
+    let arr = str.split(',').map(item => item.trim());
+  
+   if (str.length) {
+     arr.forEach((item, index) => {
+      let equalIndex = item.indexOf('=');
+      let num = item.slice( equalIndex +1, item.length);
+      let key = item.slice(0, equalIndex);
+  
+  
+      console.log(item, num, key);
+  
+      resp[key] = parseInt(num);
+    });
+   }
+  
+    console.log('resp', resp);
+    return resp;
+  }
+
+  /* kata 26.05.2021 */
+
+  function getCity(str){
+    let citys = {}
+    let arrObj = str.split(/\r?\n/)
+    arrObj.forEach(item => {
+       const [key, val] = item.split(":");
+      let a = val.split(',')
+      let nums = []
+       a.forEach(num => {
+        let a = num.slice(num.indexOf(' '), num.length)
+        nums.push(parseFloat(a))
+        })
+       citys[key] = nums;
+    })
+    return citys;
+  }
+   
+  function mean(town, strng) {
+    let resp = getCity(strng);
+    if(!resp[town]) {
+      return -1;
+    }
+    const sum = resp[town].reduce((acc,curr) => (acc+ curr) , 0)
+    return sum / resp[town].length
+  }
+  function variance(town, strng) {
+    let resp = getCity(strng);
+    
+    if(!resp[town]) {
+     return -1;
+    }
+    
+    let mean_sum = mean(town,strng)
+    
+    
+   console.log(Math.pow(resp[town][0]- mean_sum,2))
+    const sum = resp[town].reduce((acc,curr)=> (acc + Math.pow(curr - mean_sum ,2)) , 0)
+    return sum / resp[town].length
+  }
