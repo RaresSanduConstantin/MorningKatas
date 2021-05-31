@@ -8,3 +8,4 @@
 ### De unde ne luam exercitiile:
 #### - https://www.codewars.com
 #### - https://www.codingame.com/start
+#### - https://nodeschool.io/#workshoppers
