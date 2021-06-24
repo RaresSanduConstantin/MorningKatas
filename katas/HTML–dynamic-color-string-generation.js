@@ -13,6 +13,8 @@ cafebabe
 #a567567676576756A7
 
 https://www.codewars.com/kata/56f1c6034d0c330e4a001059/javascript
+
+
 */
 
 var generateColor = function () {
