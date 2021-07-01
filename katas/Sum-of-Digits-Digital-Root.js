@@ -39,3 +39,14 @@ function digital_root(n) {
 function digital_root(n) {
   return ((n - 1) % 9) + 1;
 }
+
+
+
+function digital_root(n) {
+  if(n < 10) return n
+ 
+  return digital_root(
+    n.toString(10).replace(/\D/g, '0').split('').map(Number).reduce((acc,curr) => acc+curr, 0)
+  )
+}
+ 
