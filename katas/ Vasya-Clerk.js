@@ -17,8 +17,7 @@ https://www.codewars.com/kata/555615a77ebc7c2c8a0000b8/javascript
 */
 
     function tickets(peopleInLine){​​​​​
-  // ...
-  if(peopleInLine[0] === 50 || peopleInLine[0] === 100) return 'NO'
+    if(peopleInLine[0] === 50 || peopleInLine[0] === 100) return 'NO'
   let change = {​​​​​25: 0, 50: 0, 100: 0}​​​​​;
   peopleInLine.forEach((bill) => {​​​​​
       console.log(change)
@@ -30,7 +29,6 @@ https://www.codewars.com/kata/555615a77ebc7c2c8a0000b8/javascript
     if (bill === 50) {​​​​​
       change[50]++
       change[25]--
-      if(change[25] < 0) return 'NO'
     }​​​​​
     if (bill === 100) {​​​​​
     
