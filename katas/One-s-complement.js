@@ -44,3 +44,27 @@ Test.assertEquals(onesComplement("1101"), "0010");
 });
 
   */
+
+/* 
+Other's solution:
+
+function onesComplement(n) {
+  return [...n].map(e => e === '1' ? '0' : '1').join('')
+};
+
+function onesComplement(n) {
+  return [...n].map( b => b^1 ).join``
+};
+
+function onesComplement(n) {
+  var result = ''
+  for (let i of n){
+    if(i == '1'){
+      result += '0'
+    }else{
+      result += '1'
+    }
+  }
+  return result
+}
+*/
